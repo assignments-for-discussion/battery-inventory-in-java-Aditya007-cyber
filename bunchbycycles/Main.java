@@ -9,15 +9,16 @@ public class Main {
 
   static CountsByUsage countBatteriesByUsage(int[] cycles) {
     CountsByUsage counts = new CountsByUsage();
-    for (int i = 0; i < cycles.length; i++) {
-            if (cycles[i] < 400) {
+    for (int i = 0; i < cycles.length; i++) {     //iterating through the cycles array which has the count of how many times batteries have been used.
+      
+            if (cycles[i] < 400) {            //checking the conditions if charged less than 400 times
                 counts.lowCount++;
             }
 
-            else if (cycles[i] >= 400 && cycles[i] <= 919) {
+            else if (cycles[i] >= 400 && cycles[i] <= 919) {    //checking the conditions if charged between 400 and 919 times
                 counts.mediumCount++;
             } else {
-                counts.highCount++;
+                counts.highCount++;     //checking the conditions if charged more than 920 times
             }
         }
     return counts;
